@@ -1,11 +1,28 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
+import Header from "./components/Header";
+import Login from "./components/Login";
+import Browse from "./components/Browse";
+
 
 function App() {
+
+
+  const appRouter = createBrowserRouter([
+    {
+    path: "/",
+    element: <Login/>,
+    },
+    {
+    path: "/browse",
+    element: <Browse/>,
+    },
+
+  ]);
+
   return (
     <>
-      <h1 class="bg-sky-700 px-4 py-2 text-white text-shadow-amber-50 hover:bg-sky-800 sm:px-8 sm:py-3">
-        Netflix-GPT
-      </h1>
+      <RouterProvider router={appRouter} />
     </>
   );
 }
