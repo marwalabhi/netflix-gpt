@@ -1,20 +1,22 @@
-import React from "react";
 import Header from "./Header";
+import { BACKGROUND_IMG_URL } from "../constants/ImageURL";
 
 const Login = () => {
   return (
-    <div>
-      <Header />
-
-      <div className="object-cover relative" >
-        <img
-          className=""
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/fa4630b1-ca1e-4788-94a9-eccef9f7af86/web/IN-en-20250407-TRIFECTA-perspective_43f6a235-9f3d-47ef-87e0-46185ab6a7e0_large.jpg"
-          alt="background_image"
-        />
-        <div className="absolute top-0 bg-black opacity-[0.5] w-full h-full"></div>
+    <div className="relative h-screen w-screen">
+      {/* Background Image */}
+      <img
+        className="absolute top-0 left-0 z-0 h-full w-full object-cover"
+        src={BACKGROUND_IMG_URL}
+        alt="background_image"
+      />
+      {/* Overlay */}
+      <div className="absolute top-0 left-0 z-10 h-full w-full bg-black opacity-[0.5]"></div>
+      {/* Header and content */}
+      <div className="relative z-20">
+        <Header />
+        {/* You can add login form or other content here */}
       </div>
-      
     </div>
   );
 };
